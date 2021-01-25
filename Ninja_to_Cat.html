@@ -30,11 +30,14 @@
 
     <script>
         $('img').click(function() {
+            //Switching img src with alt
             var src = $(this).attr('src');
             var alt = ($(this).attr('src') === $(this).attr('src')) ?
                 $(this).attr('alt') :
                 $(this).attr('src');
+            //Log replacement img in console
             console.log(alt);
+            //Adds fading animation fpr viewing pleasure
             $(this).fadeTo('fast', 0, function() {
                 $(this).attr('alt', src).fadeTo('fast', 1);
                 $(this).attr('src', alt);
