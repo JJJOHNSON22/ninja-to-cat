@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja to Cat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ninja to Cat</h1>
+    <img id="ninja" src='images/ninja0.png' alt='images/cat0.png'>
+    <img id="ninja" src='images/ninja1.png' alt='images/cat1.png'>
+    <img id="ninja" src="images/ninja2.png" alt='images/cat2.png'>
+    <img id="ninja" src="images/ninja3.png" alt='images/cat3.png'>
+    <img id="ninja" src="images/ninja4.png" alt='images/cat4.png'>
+
+    <script>
+        $('img').click(function() {
+            var src = $(this).attr('src');
+            var alt = ($(this).attr('src') === $(this).attr('src')) ?
+                $(this).attr('alt') :
+                $(this).attr('src');
+            console.log(alt);
+            $(this).fadeTo('fast', 0, function() {
+                $(this).attr('alt', src).fadeTo('fast', 1);
+                $(this).attr('src', alt);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
